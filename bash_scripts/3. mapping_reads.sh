@@ -14,7 +14,7 @@ femalereference=MpTak_v6.1.genome_Autosome_Xchr.fasta
 for file in "${females[@]}"; do
 
         # Align 
-        bwa bwasw -t 4 -s 5 $femalereference ${file}_R1.fastq.gz ${file}_R2.fastq.gz 2> ${file}.err > ${file}.sam
+        bwa sampe -t 4 $femalereference ${file}_R1.fastq.gz ${file}_R2.fastq.gz 2> ${file}.err > ${file}.sam
 done
 
 
@@ -33,5 +33,5 @@ malereference=MpTak_v6.1.genome_Autosome_Ychr.fasta
 for file in "${males[@]}"; do
 
         # Align
-        bwa bwasw -t 4 -s 5 $malereference ${file}_R1.fastq.gz ${file}_R2.fastq.gz 2> ${file}.err > ${file}.sam
+        bwa sampe -t 4 $malereference ${file}_R1.fastq.gz ${file}_R2.fastq.gz 2> ${file}.err > ${file}.sam
 done
